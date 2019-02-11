@@ -700,6 +700,22 @@ class Products(MWS):
         data.update(utils.enumerate_param('ASINList.ASIN.', asins))
         return self.make_request(data)
 
+    def get_fees_estimate_for_asin(self, marketplaceid, asins, prices, currencies):
+        data = dict(Action='GetMyFeesEstimate')
+        for index in range(len(asins)):
+            request_item_dicts = {'MarketplaceId': marketplaceid,
+                                  'IdType': 'ASIN',
+                                  'IdValue': asins[index],
+                                  'IsAmazonFulfilled': 'true',
+                                  'Identifier': asins[index],
+                                  'PriceToEstimateFees.ListingPrice.Amount': str(prices[index]),
+                                  'PriceToEstimateFees.ListingPrice.CurrencyCode': currencies[index]
+                                  }
+            for key in request_item_dicts.keys():
+                data['FeesEstimateRequestList.FeesEstimateRequest.{}.{}'.format(index+1, key)] = request_item_dicts[key]
+        print (data)
+        return self.make_request(data)
+
 
 class Sellers(MWS):
     """

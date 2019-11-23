@@ -45,6 +45,7 @@ MARKETPLACES = {
     "CA": "https://mws.amazonservices.ca",  # A2EUQ1WTGCTBG2
     "US": "https://mws.amazonservices.com",  # ATVPDKIKX0DER",
     "DE": "https://mws-eu.amazonservices.com",  # A1PA6795UKMFR9
+    "TR": "https://mws-eu.amazonservices.com",  # A33AVAJ2PDY3EV
     "ES": "https://mws-eu.amazonservices.com",  # A1RKKUPIHCS9HS
     "FR": "https://mws-eu.amazonservices.com",  # A13V1IB3VIYZZH
     "IN": "https://mws.amazonservices.in",  # A21TJRUUN4KGV
